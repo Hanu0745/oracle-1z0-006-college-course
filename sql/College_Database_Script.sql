@@ -1,8 +1,11 @@
 -- =====================================================================
 --  COLLEGE MANAGEMENT SYSTEM  —  shared practice database
---  Used from Day 08 onward. Students paste and run the whole file in
---  Oracle Live SQL, then save it as "College_DB".
---  Days 03–07 build this design step by step on paper.
+--  Loaded on Day 10 and used for every query from Day 11 onward.
+--  Students paste and run the whole file in Oracle Live SQL, then
+--  click Save and name it "College_DB". Run it again any time you want
+--  fresh data.
+--  Days 02–08 design these ten tables step by step on paper, and Day 09
+--  types the first four of them by hand.
 -- =====================================================================
 
 -- ---------- 1. Clean start (errors here are fine on first run) --------
@@ -226,14 +229,7 @@ INSERT INTO loans VALUES (9005, '9780262033848', 1, 104, NULL, DATE '2025-07-10'
 COMMIT;
 
 -- ---------- 4. Quick check ---------------------------------------------
-SELECT 'branches'     AS table_name, COUNT(*) AS rows_in_it FROM branches
-UNION ALL SELECT 'students',     COUNT(*) FROM students
-UNION ALL SELECT 'teachers',     COUNT(*) FROM teachers
-UNION ALL SELECT 'subjects',     COUNT(*) FROM subjects
-UNION ALL SELECT 'teaches',      COUNT(*) FROM teaches
-UNION ALL SELECT 'enrollments',  COUNT(*) FROM enrollments
-UNION ALL SELECT 'fee_payments', COUNT(*) FROM fee_payments
-UNION ALL SELECT 'books',        COUNT(*) FROM books
-UNION ALL SELECT 'copies',       COUNT(*) FROM copies
-UNION ALL SELECT 'loans',        COUNT(*) FROM loans;
--- Expected: 4, 8, 6, 8, 8, 14, 9, 5, 7, 5
+-- Click the Schema tab on the left: you should see 10 tables.
+-- Then run these two lines; you should get 8 students and 14 enrollments.
+SELECT * FROM students;
+SELECT * FROM enrollments;
